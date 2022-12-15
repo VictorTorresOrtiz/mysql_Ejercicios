@@ -5,25 +5,23 @@ en tu base de datos. Acuérdate que para ello deberás hacer una conexión con l
 y un foreach para cada campeón que tengas albergado en la tabla champ.
 */
 
-$conexion = mysqli_connect("localhost", "root", "lol"); // Conexión
+$conexion = mysqli_connect("localhost", "root","" ,"lol"); // Conexión
 
 //Comprobamos
 if (mysqli_connect_errno()){
     echo "Error al conectar a la Base de Datos: " .mysqli_connect_errno();
     exit();
 }
+echo "Conectado con exito";
 
 //Consultas
-$consulta = "SELECT * FROM 'champ'";
+$consulta = "SELECT `name` FROM `champ` "; // ` ` ` ` `
 $listarChamp = mysqli_query($conexion, $consulta);
 
 If ($listarChamp){
     foreach($listarChamp as $campeones){
-        echo "$campeones[id] $campeones[nombre] </br>";
+        echo "$campeones[name] </br>";
     }
 }
-
-
-
 
 ?>
