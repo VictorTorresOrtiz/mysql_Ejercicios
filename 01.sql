@@ -3,11 +3,11 @@ CREATE DATABASE lol CHARACTER SET utf8mb4;
 USE lol;
 
 CREATE TABLE champ (
-id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-'name' VARCHAR(100) NOT NULL,
+id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`name` VARCHAR(100) NOT NULL,
 rol ENUM('Asesino', 'Mago', 'Apoyo') NOT NULL,
 difficulty VARCHAR(100) NOT NULL,
-'description' text(250) NOT NULL
+`description` text(250) NOT NULL
 );
 
 #Insertar INFO
