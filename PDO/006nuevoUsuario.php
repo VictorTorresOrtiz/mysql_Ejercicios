@@ -8,8 +8,9 @@ $password = $_POST['pss'];
 
 //Validaciones
 
-    if (empty($username)){
+    if ($username < 6 ){
         $errMsg  = 'Introduce un Nick correcto';
+        echo $errMsg;
     } else if (empty($nombre)){
         $errMsg  = 'Introduce un Nombre correcto';
 
@@ -34,21 +35,12 @@ $password = $_POST['pss'];
         );
 
         header('Location: 007nuevoUsuario.php');
-        exit();
+        exit;
 
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
 
     }
-
-    
-
-
-
-
-
-
-
 
 ?>
