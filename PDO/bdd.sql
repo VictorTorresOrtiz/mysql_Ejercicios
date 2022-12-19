@@ -4,17 +4,16 @@ USE lol;
 
 CREATE TABLE champ (
 id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`name` VARCHAR(100) NOT NULL,
+`name` VARCHAR(250) NOT NULL,
 rol ENUM('Asesino', 'Mago', 'Apoyo') NOT NULL,
-difficulty VARCHAR(100) NOT NULL,
+difficulty VARCHAR(250) NOT NULL,
 `description` text(250) NOT NULL
 );
 
 CREATE TABLE users (
 id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`name` VARCHAR(100) NOT NULL,
-`password` varchar(200) NOT NULL ,
-`email` varchar(100) NOT NULL,
-`name` varchar(100) NOT NULL,
-`username` varchar(100) NOT NULL
+`name` VARCHAR(250) NOT NULL,
+`password` VARCHAR(250) NOT NULL ,
+`email` VARCHAR(250) NOT NULL,
+`username` VARCHAR(250) NOT NULL
 );
