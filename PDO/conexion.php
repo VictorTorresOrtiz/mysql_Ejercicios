@@ -4,7 +4,7 @@
   define('DB_SERVER', 'localhost');
   define('DB_USERNAME', 'root');
   define('DB_PASSWORD', '');
-  define('DB_NAME', 'lol');
+  define('DB_NAME', 'loginApp');
 
   // Attempt to connect to MySQL
   try {

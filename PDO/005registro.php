@@ -1,48 +1,77 @@
 <?php
-require 'conexion.php';
+    require 'conexion.php';
 
 
-?>
+    //Validaciones inicializadas
+    $name = $username = $email = $password = '';
+    $name_err = $username_err = $email_err = $password_err = '';
+
+    //Posteo del formulario
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Sanitize POST --> Mediante FILTER_SANITIZE_STRING eliminamos etiquetas especiales
+    $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+    //Variables
+    $name = trim($_POST['name']);
+    $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    //Validaciones de email
+
+    if (empty($email)) {
+        $email_err = 'Introduce su email';
+    } else {
+        $sql = 'SELECT id FROM users WHERE username = :email';
+
+        if ($stmt = $pdo->prepare($sql)) {
+            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+
+            // Ejecutamos y comprobamos si el email ya existe
+            if ($stmt->execute()) {
+                if ($stmt->rowCount() === 1) {
+                    $email_err = 'Email no esta disponible';
+                }
+            } else {
+                die('ERROR DESCONOCIDO');
+            }
+        }
+        unset($stmt);
+    }
+
+    //Validar nombre
+
+    if (empty($name)) {
+        $name_err = 'Introducir nombre';
+    }
+
+    //Validar Username
+
+    if (empty($username)) {
+        $username_err = 'Introduce Username';
+    } else {
+        $sql = 'SELECT id FROM users WHERE username = :username';
+    }
+        if ($stmt = $pdo->prepare($sql)) {
+            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+
+            // Ejecutamos y comprobamos si el usernam ya existe
+            if ($stmt->execute()) {
+                if ($stmt->rowCount() === 1) {
+                    $username_err = 'Username no esta disponible';
+                }
+            } else {
+                die('ERROR DESCONOCIDO');
+            }
+        }
+        unset($stmt);
+    }
+
+      //Validar Contraseña
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <title>Registro</title>
-</head>
-<body>
-    <form action="006nuevoUsuario.php" method="POST">
-        <div class="mb-3">
-            <label for="usernametxt" class="form-label">Username</label>
-            <input type="text" class="form-control" id="usernametxt" name="usernametxt" required>
-            <!---Validaciones!-->
 
 
 
 
-        </div>
-
-        <div class="mb-3">
-            <label for="nametxt" class="form-label">Name</label>
-            <input type="text" class="form-control" id="nametxt" name="nametxt" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="emailtxt" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="emailtxt" name="emailtxt" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="pss" class="form-label">PassWord</label>
-            <input type="password" class="form-control" id="pss" name="pss" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary align-items-center" name="enviar">Submit</button>
-    </form>
-</body>
-</html>
+  
