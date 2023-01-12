@@ -1,6 +1,6 @@
 <?php
 
-  require_once 'db.php';
+  require_once '../db.php';
 
   // Variables iniciales
   $email = $password = '';
@@ -68,43 +68,94 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>  <title>Login</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <title>Login</title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="./assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <!--   Core JS Files   -->
+  <script defer src="./assets/js/core/popper.min.js"></script>
+  <script defer src="./assets/js/core/bootstrap.min.js"></script>
+  <script defer src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script defer src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script defer src="./assets/js/plugins/chartjs.min.js"></script>
+  <script defer src="./assets/js/plugins/addons.js"></script>
+
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!--parallax effects, scripts for the example pages etc -->
+  <script defer src="./assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+
 </head>
-<body>
-  <div class="container">
+
+<body class="">
+  <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
-      <div class="col-md-6 mx-auto">
-        <div class="card card-body bg-light mt-5">
-          <h2>Login</h2>
-          <p>Fill in your credentials</p>
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">   
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" name="email" class="form-control form-control-lg <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
-              <span class="invalid-feedback"><?php echo $email_err; ?></span>
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" name="password" class="form-control form-control-lg <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-              <span class="invalid-feedback"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-row">
-              <div class="col">
-                <input type="submit" value="Login" class="btn btn-success btn-block">
-              </div>
-              <div class="col">
-                <a href="register.php" class="btn btn-light btn-block">No account? Register</a>
-              </div>
-            </div>
-          </form>
-        </div>
+      <div class="col-12">
       </div>
     </div>
   </div>
+  <main class="main-content  mt-0">
+    <section>
+      <div class="page-header min-vh-75">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+              <div class="card card-plain mt-8">
+                <div class="card-header pb-0 text-left bg-transparent">
+                  <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
+                  <p class="mb-0">Enter your email and password to sign in</p>
+                </div>
+                <div class="card-body">
+
+                  <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                    <label>Email</label>
+                    <div class="mb-3">
+                      <input type="email" name ="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                      <span class="invalid-feedback"><?php echo $email_err; ?></span>
+                    </div>
+
+                    <label>Password</label>
+                    <div class="mb-3">
+                      <input type="password" name="password" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                      <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                  <p class="mb-4 text-sm mx-auto">
+                    Don't have an account?
+                    <a href="register.php" class="text-info text-gradient font-weight-bold">Sign up</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+                <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('./assets/img/curved-images/curved6.jpg')"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>
