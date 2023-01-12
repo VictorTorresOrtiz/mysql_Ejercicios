@@ -124,12 +124,12 @@
                     <label>Email</label>
                     <div class="mb-3">
                       <input type="email" name ="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
-                      <span class="invalid-feedback"><?php echo $email_err?></span>
+                      <span class="invalid-feedback"><?php echo $email_err;?></span>
                     </div>
 
                     <label>Password</label>
                     <div class="mb-3">
-                      <input type="password" name="password" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                      <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
                       <span class="invalid-feedback"><?php echo $password_err; ?></span>
                     </div>
 
