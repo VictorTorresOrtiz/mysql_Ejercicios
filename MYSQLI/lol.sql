@@ -6,7 +6,8 @@ CREATE TABLE champ(
     rol ENUM("Asesino","Luchador","Tirado","Mago","Soporte","Tanque"),
     dificultad ENUM("Baja","Moderada","Alta"),
     `description` TEXT
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 INSERT INTO champ VALUES(0,"AURELION SOL","Mago","Moderada","dsdsdsddsdsdsd.");
 INSERT INTO champ VALUES(0,"BLITZCRANK","Tanque","Moderada","sdsdsdsdsd");
 INSERT INTO champ VALUES(0,"CASSIOPEIA","Mago","Alta","sdsdssddsds.");
