@@ -11,7 +11,7 @@
 <body>
     <?php 
     $servername = "localhost";
-    $database = "lol";
+    $database = "lol"; 
     $username = "root";
     $password = "";
     // Create connection
@@ -39,7 +39,7 @@
           <label for="nombre" class="form-label">Nombre</label>
           <input type="text" name="nombre" class="form-control" id="inputName" value="<?php echo $nombre?>">
         </div>
-
+        
         <div class="col-md-4">
         <label for="rol" class="form-label">Rol</label><br>
           <input type="radio" name="rol" id="Asesino" value="Asesino" <?php if($rol=='Asesino'){ echo "checked=checked";} ?>>Asesino<br>

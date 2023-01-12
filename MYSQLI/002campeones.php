@@ -1,3 +1,6 @@
+<?php
+ require_once 'db.php';
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -11,44 +14,37 @@
 </head>
 <body>
 <?php 
-    $servername = "localhost";
-    $database = "lol";
-    $username = "root";
-    $password = "";
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $database);
-    // Check connection
-    if (!$conn) {
-        echo("Connection failed: " . mysqli_connect_error());
-        exit();
-    }           
         $sql="SELECT * FROM champ;";
         $listachamp = mysqli_query($conn, $sql);
 
         echo "<ul>";
         foreach($listachamp as $campeon){
             echo "<li>";
-            echo "$campeon[name] ---****---- $campeon[rol] <button><a href='003editando.php?id=$campeon[id]'>Editar Info</a></button>
-            <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#modal'>Abrir Modal</button>
-            <div class='modal fade' id='modal' tabindex='-1' role='dialog' aria-labelledby='modal' aria-hidden='true'>
-            <div class='modal-dialog' role='document'>
-                <div class='modal-content'>
-                <div class='modal-header'>
-                    <h5 class='modal-title' id='modal'>Modal title</h5>
-                    <button type='button' class='close' data-dismiss='modal' aria-label='Cerrar'>
-                    <span aria-hidden='true'>&times;</span>
-                    </button>
-                </div>
-                <div class='modal-body'>
-                    ...
-                </div>
-                <div class='modal-footer'>
-                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-                    <button type='button' class='btn btn-primary'>Save changes</button>
-                </div>
+            echo "$campeon[name] ---- $campeon[rol] 
+            <button>
+                <a href='003editando.php?id=$campeon[id]'>EDITAR</a></button>
+                <a class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#modalSelector$campeon[id]'>BORRAR</a>
+                    <div class='modal fade' id='modalSelector$campeon[id]' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                        <div class='modal-dialog' role='document'>
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    <h5 class='modal-title' id='exampleModalLabel'>Info</h5>
+                                    <button type='button' class='close' data-bs-dismiss='modal' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span>
+                                    </button>
+                                </div>
+
+                    <div class='modal-body'>
+                        <p>¿Seguro que quieres borrar el campeón $campeon[name]?</p>
+                    </div>
+
+                    <div class='modal-footer'>
+                        <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cerrar</button>
+                        <a type='button' class='btn btn-primary' href='003borrar.php?id=$campeon[id]'>Guardar cambios</a>
+                    </div>
                 </div>
             </div>
-            </div>";
+        </div>";
             echo "</li>";
         }
         echo "</ul>";
