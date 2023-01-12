@@ -44,7 +44,7 @@
                 session_start();
                 $_SESSION['email'] = $email;
                 $_SESSION['name'] = $row['name'];
-                header('location: index.php');
+                header('location: html/dashboard.php');
               } else {
                 // Si la contraseña es erronea
                 $password_err = 'The password you entered is not valid';
