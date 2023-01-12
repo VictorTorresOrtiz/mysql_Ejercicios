@@ -1,6 +1,6 @@
 <?php
 
-  require_once '../db.php';
+  require_once 'db.php';
 
   // Variables iniciales
   $email = $password = '';
@@ -78,25 +78,25 @@
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="html/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="html/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="html/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="./assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <link id="pagestyle" href="html/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
   <!--   Core JS Files   -->
-  <script defer src="./assets/js/core/popper.min.js"></script>
-  <script defer src="./assets/js/core/bootstrap.min.js"></script>
-  <script defer src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script defer src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script defer src="./assets/js/plugins/chartjs.min.js"></script>
-  <script defer src="./assets/js/plugins/addons.js"></script>
+  <script defer src="html/assets/js/core/popper.min.js"></script>
+  <script defer src="html/assets/js/core/bootstrap.min.js"></script>
+  <script defer src="html/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script defer src="html/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script defer src="html/assets/js/plugins/chartjs.min.js"></script>
+  <script defer src="html/assets/js/plugins/addons.js"></script>
 
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!--parallax effects, scripts for the example pages etc -->
-  <script defer src="./assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+  <script defer src="html/assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 
 </head>
 
@@ -124,7 +124,7 @@
                     <label>Email</label>
                     <div class="mb-3">
                       <input type="email" name ="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
-                      <span class="invalid-feedback"><?php echo $email_err; ?></span>
+                      <span class="invalid-feedback"><?php echo $email_err?></span>
                     </div>
 
                     <label>Password</label>
@@ -148,7 +148,7 @@
             </div>
             <div class="col-md-6">
               <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
-                <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('./assets/img/curved-images/curved6.jpg')"></div>
+                <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('html/assets/img/curved-images/curved6.jpg')"></div>
               </div>
             </div>
           </div>

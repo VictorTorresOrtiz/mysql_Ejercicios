@@ -1,6 +1,6 @@
 <?php
 
-  require_once '../db.php';
+  require_once 'db.php';
 
   // Variables hardcodeadas
   $name = $email = $password = $confirm_password = '';
@@ -100,30 +100,30 @@
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="html/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="html/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="html/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="./assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <link id="pagestyle" href="html/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
   <!--   Core JS Files   -->
-  <script defer src="./assets/js/core/popper.min.js"></script>
-  <script defer src="./assets/js/core/bootstrap.min.js"></script>
-  <script defer src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script defer src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script defer src="./assets/js/plugins/chartjs.min.js"></script>
-  <script defer src="./assets/js/plugins/addons.js"></script>
+  <script defer src="html/assets/js/core/popper.min.js"></script>
+  <script defer src="html/assets/js/core/bootstrap.min.js"></script>
+  <script defer src="html/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script defer src="html/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script defer src="html/assets/js/plugins/chartjs.min.js"></script>
+  <script defer src="html/assets/js/plugins/addons.js"></script>
 
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script defer src="./assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+  <script defer src="html/assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
   <section class="min-vh-100 mb-8">
-    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('./assets/img/curved-images/curved14.jpg');">
+    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('html/assets/img/curved-images/curved14.jpg');">
       <span class="mask bg-gradient-dark opacity-6"></span>
       <div class="container">
         <div class="row justify-content-center">
